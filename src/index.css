@@ -1,0 +1,190 @@
+:root {
+  --color-bg: #16161d;
+  --color-contrast-lower: #27272e;
+  --color-contrast-low: #393940;
+  --color-contrast-medium: #4d4d53;
+  --color-contrast-high: #b8b8ba;
+  --color-contrast-higher: #e7e7e8;
+
+  --monospace: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace, monospace;
+  --color-outline: rgba(26, 255, 214, 0.6);
+
+  --color-anchor: #1affd6;
+  --color-shadow: #00000040;
+
+  --secondary: #76757a !important;
+  --danger: #ee0000 !important;
+  --warning: #cb891d !important;
+  --success: #1fc791 !important;
+  --info: #00ffcd !important;
+  --primary: #0070f3 !important;
+
+  --secondary-hover: #616166;
+  --danger-hover: #b60000;
+  --warning-hover: #a16c17;
+  --success-hover: #00bf80;
+  --info-hover: #00b690;
+  --primary-hover: #0050b6;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: var(--color-contrast-low);
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--color-contrast-lower);
+}
+
+::selection {
+  background-color: rgba(53, 166, 247, 0.25);
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol" !important;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  color: var(--color-contrast-higher) !important;
+  background-color: var(--color-bg) !important;
+}
+
+code {
+  font-family: var(--monospace);
+}
+
+hr {
+  border-top: 1px solid var(--color-contrast-medium) !important;
+}
+
+a,
+a:hover {
+  color: var(--color-anchor) !important;
+}
+
+header {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background: linear-gradient(0deg, #16161d40, #13197340);
+}
+
+main {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+section {
+  padding-top: 16px;
+}
+section:not(:last-child) {
+  padding-bottom: 16px;
+}
+section.child {
+  padding-top: 8px;
+}
+section.child:not(:last-child) {
+  padding-bottom: 8px;
+}
+
+time {
+  font-family: var(--monospace);
+}
+
+.row {
+  justify-content: center;
+}
+
+.note {
+  cursor: pointer;
+}
+.note:not(:last-child) {
+  margin-bottom: 8px;
+}
+.note .options-trigger {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+  transform: rotate(90deg);
+  font-weight: 700;
+  letter-spacing: 3px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: var(--color-contrast-higher);
+}
+.note .options {
+  display: none;
+}
+.note .options.show {
+  display: block;
+}
+.note .options {
+  z-index: 1001;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 6px;
+  padding: 10px 0;
+  background: var(--color-contrast-low);
+  animation: opacity 55ms linear;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.note .options ul {
+  margin: 0;
+  padding: 0;
+}
+.note .options ul li {
+  padding: 3px 33px 3px 24px;
+  min-width: 89px;
+  list-style: none;
+}
+.note .options ul li:hover {
+  background: var(--color-contrast-medium);
+}
+.note .options ul li:hover:active,
+.note .options ul li:hover:focus {
+  color: var(--color-contrast-medium);
+  background: var(--color-contrast-high);
+}
+
+.navigation {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 9px;
+  border-radius: 18px;
+  background: var(--color-contrast-lower); 
+}
+.navigation .navi:not(:last-child) {
+  margin-right: 6px;
+}
+
+.input-title,
+.input-body {
+  width: 100%;
+  border: 0;
+  outline: none;
+  color: var(--color-contrast-higher);
+  background: transparent;
+}
+.input-body {
+  height: 60vh;
+}

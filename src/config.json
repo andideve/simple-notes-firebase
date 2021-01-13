@@ -1,0 +1,16 @@
+{
+  "restapi": "https://andideve.herokuapp.com",
+  "frontend": "https://andi.netlify.app",
+  "project_categories": [
+    {
+      "section_title": "Open-source stuff",
+      "card_title": "OSS",
+      "category_name": "oss"
+    },
+    {
+      "section_title": "Other stuff",
+      "card_title": "Other",
+      "category_name": "others"
+    }
+  ]
+}

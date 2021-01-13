@@ -1,0 +1,56 @@
+.form_group {
+  margin-bottom: 15px;
+}
+
+.form_label {
+  position: absolute;
+  margin-top: -10px;
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 0.3rem;
+  cursor: text;
+  transform: scale(0.8);
+}
+
+.form_control {
+  padding: 24px 12px 24px 12px;
+  border-radius: 0.3rem;
+}
+
+.form_control:focus {
+  box-shadow: unset;
+}
+
+.form_control,
+.form_control:focus {
+  color: var(--color-contrast-higher);
+  background: var(--color-bg) !important;
+}
+
+.form_group:focus-within .form_label {
+  transition: color 0.15s ease-in-out;
+  color: var(--info) !important;
+}
+
+.form_group:focus-within .form_control {
+  border-color: var(--info);
+}
+
+.form_group:focus-within .form_label,
+.form_group:focus-within .form_label.as_placeholder,
+.form_group:not(:focus-within) .form_label:not(.as_placeholder) {
+  color: var(--color-contrast-higher);
+  background: var(--color-bg);
+}
+
+.form_group:not(:focus-within) .form_label.as_placeholder {
+  color: var(--color-contrast-medium) !important;
+  transition: all 0.2s ease;
+  color: var(--color-contrast-high);
+  transform: translateY(24px) translateX(5px) scale(1);
+}
+
+.form_group:focus-within .form_label.as_placeholder {
+  transition: all 0.2s ease;
+  transform: translateY(0) translateX(0) scale(0.8);
+}
