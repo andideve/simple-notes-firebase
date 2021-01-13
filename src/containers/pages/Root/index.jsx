@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import Input from "../../../components/Input";
 import { login, getLogin } from "../../../services";
@@ -61,22 +61,16 @@ function Root({ setProfile, history }) {
       <main>
         <Container>
           <Row>
-            <Col lg={6}>
-              <Card>
-                <Card.Header>
-                  <h1 className="h3 mb-0 text-center">Halaman Masuk</h1>
-                </Card.Header>
-                <Card.Body>
-                  <form onSubmit={handleSubmit}>
-                    <Input id="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" autoFocus="on" required />
-                    <Input id="password" value={form.password} onChange={handleChange} placeholder="Password" type="password" required />
-                    <div className="d-flex justify-content-between">
-                      <Button variant="link" className="px-0" onClick={() => history.push("/register")}>Daftar akun</Button>
-                      <Button variant="primary" type="submit" disabled={isSubmit}>Masuk</Button>
-                    </div>
-                  </form>
-                </Card.Body>
-              </Card>
+            <Col lg={4}>
+              <h1 className="h3 mb-4 text-center">Masuk</h1>
+              <form onSubmit={handleSubmit}>
+                <Input id="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" autoFocus="on" required />
+                <Input id="password" value={form.password} onChange={handleChange} placeholder="Password" type="password" required />
+                <div className="d-flex justify-content-between">
+                  <Button variant="link" className="px-0" onClick={() => history.push("/register")}>Daftar akun</Button>
+                  <Button variant="primary" type="submit" disabled={isSubmit}>Masuk</Button>
+                </div>
+              </form>
             </Col>
           </Row>
         </Container>
