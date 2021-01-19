@@ -24,6 +24,12 @@ function Notes({ setProfile, profile, notes, history }) {
                 setInitialized(true);
             });
         }
+
+        return () => {
+            if (window.localStorage.getItem("introduced") === null) {
+                window.localStorage.setItem("introduced", true);
+            }
+        }
     }, [history, initialized, setProfile]);
 
     const goSinglePage = (i) => {

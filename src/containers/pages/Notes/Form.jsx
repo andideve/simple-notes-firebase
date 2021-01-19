@@ -46,10 +46,6 @@ function Form({ profile, notes, match, history }) {
                         if (error) {
                             return alert("error occured");
                         }
-
-                        if (window.localStorage.getItem("introduced") === null) {
-                            window.localStorage.setItem("introduced", true);
-                        }
     
                         return history.replace("/notes");
                     }
@@ -103,6 +99,7 @@ function Form({ profile, notes, match, history }) {
                                         className="input-body"
                                         value={form.body}
                                         onChange={handleChange}
+                                        placeholder="Tulis sesuatu"
                                     />
                                 </form>
                             </Col>
